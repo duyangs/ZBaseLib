@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BaseLibDemo</string>
+    <string name="bar_edit">bar edit</string>
+    <string name="bar_share">bar share</string>
+    <string name="bar_setting">bar setting</string>
+
+    <string name="toast_bottom">bottom toast</string>
+</resources>

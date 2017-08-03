@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/base_title"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="?attr/colorPrimary"
+    android:translationZ="4dp"
+    android:gravity="center_vertical">
+
+    <!--android:navigationIcon="?attr/navigationIcon"-->
+
+    <!--android:theme="@style/ThemeOverlay.AppCompat.ActionBar"-->
+    <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
+
+    <!--浮起来的高度-->
+    <!--android:elevation="4dp"-->
+    <!--垂直方向的位移-->
+    <!--android:translationZ="4dp"-->
+
+    <TextView
+        android:id="@+id/base_title_text"
+        style="?attr/titleTextStyle"/>
+
+
+</android.support.v7.widget.Toolbar>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <Button
+        android:id="@+id/ac_toast_top_short"
+        style="@style/MainTextStyle"
+        android:text="top toast short"/>
+
+    <Button
+        android:id="@+id/ac_toast_center_short"
+        style="@style/MainTextStyle"
+        android:text="center toast short"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/ac_toast_bottom_short"
+        style="@style/MainTextStyle"
+        android:text="bottom toast short"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/ac_toast_top_long"
+        style="@style/MainTextStyle"
+        android:text="top toast long"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/ac_toast_center_long"
+        style="@style/MainTextStyle"
+        android:text="center toast long"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:id="@+id/ac_toast_bottom_long"
+        style="@style/MainTextStyle"
+        android:text="bottom toast long"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/ac_toast_cancel"
+        style="@style/MainTextStyle"
+        android:text="cancel"
+        android:layout_marginTop="10dp"/>
+
+</LinearLayout>

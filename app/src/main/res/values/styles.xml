@@ -1,0 +1,43 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <!--Toolbar颜色-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!--状态栏颜色-->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!--checkBox 等控件选中颜色-->
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--标题文字颜色-->
+        <item name="titleTextColor">@color/colorTitleText</item>
+        <!--设置左侧返回按钮-->
+        <item name="navigationIcon">@drawable/icon_back</item>
+        <!--各控制元件的预设颜色。-->
+        <item name="colorControlNormal">@color/colorTitleText</item>
+        <!--titleTextStyle-->
+        <item name="titleTextStyle">@style/customTitleTextStyle</item>
+        <!--标题栏高度-->
+        <item name="actionBarSize">45dp</item>
+    </style>
+
+    /*自定义标题栏样式*/
+    <style name="customTitleTextStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/colorTitleText</item>
+        <item name="android:layout_gravity">left|center_vertical</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="MainTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:onClick">onClick</item>
+    </style>
+
+</resources>
