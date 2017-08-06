@@ -81,23 +81,28 @@ Add the dependency
 
     使用时需在布局文件中引用base_title.xml
     
-    设置标题
-    setTitleText(String); 
+    BaseToolbar.Builder toolBarBuilder = toolBarBuilder = BaseToolbar.newInstance(this);
     
-    setTitleText(int)
-    
-    隐藏返回键
-    hideNavigationIcon();
-    
-    将navigationOnClick 和 onMenuItemClick 封装成接口  方便在BaseActivity的子类中直接实现对ToolBar的点击监听操作
-    public interface OnClickListener{
-        void navigationOnClick(View v);
+    toolBarBuilder.setOnClickListener(new BaseToolbar.OnClickListener() {
+            @Override
+            public void navigationOnClick(View v) {//返回键监听
 
-        boolean onMenuItemClick(MenuItem item);
-    }
-    
-    获取ToolBar 方便自己实现其他功能 
-    getmToolbar() 
+            }
+
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {//menu监听
+                return false;
+            }
+        }).isHideNavigationIcon(true)//是否显示返回键,默认显示
+                .setRsIdTitle(R.string.app_name)//title
+                .setTextTitle("title")//title
+                .setTitleDrawable(getResources().getDrawable(R.drawable.icon_edit))//title图标
+                .setTitleOnClickListener(new View.OnClickListener() {//title监听
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                }).build();
     
     
 <h3 id = '3.3'>3.BaseActivity --- Activity基类 支持继承 （ 已经调用了BaseActivityManager 的添加和删除 ）</h3>
@@ -121,9 +126,37 @@ Add the dependency
     
     子类可调用方法
     
-    initBaseToolbar()  初始化BaseToolbar  表明使用baseTitle
-    
-    getBaseToolBar()  获取mBaseToolbar  方便子类直接使用baseToolbar中的方法 减少BaseActivity中方法数
+    /**
+     * 初始化BaseToolbar  表明使用baseTitle
+     */
+    protected void initDefaultBaseToolbar(String title) {
+        toolBarBuilder.setOnClickListener(DefaultBarOnClickListener.newInstance(this))
+                .setTextTitle(title)
+                .build();
+    }
+
+    protected void initDefaultBaseToolbar(int titleId) {
+        toolBarBuilder.setOnClickListener(DefaultBarOnClickListener.newInstance(this))
+                .setRsIdTitle(titleId)
+                .build();
+    }
+
+    /**
+     * 应用场景在于动态修改页面Title
+     * @param title
+     */
+    protected void setBarTitle(String title){
+        toolBarBuilder.getBaseToolbar().setTitle(title);
+    }
+
+    protected void setBarTitle(int titleId){
+        toolBarBuilder.getBaseToolbar().setTitle(getString(titleId));
+    }
+
+    protected void setBarTitleIcon(Drawable icon){
+        toolBarBuilder.getBaseToolbar().setTitleDrawable(icon);
+    }
+
 
     页面跳转
     startActivity(Class<?> clz)  
