@@ -4,7 +4,7 @@
 ![](https://img.shields.io/badge/API-15%2B-green.svg)
 
 # BaseLib
-Android App 项目 base 引用依赖库
+Lightweight Android project dependencies  
 ***
 
 <h2>Pictures show</h2>
