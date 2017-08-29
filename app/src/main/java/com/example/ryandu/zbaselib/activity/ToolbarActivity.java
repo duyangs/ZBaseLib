@@ -33,8 +33,15 @@ public class ToolbarActivity extends BaseActivity implements BaseToolbar.OnClick
 
     @Override
     protected void initView() {
-
-        initDefaultBaseToolbar("Toolbar演示");
+        toolBarBuilder.setOnClickListener(this)
+                .setTextTitle("Toolbar演示")
+                .setTitleDrawable(getResources().getDrawable(R.mipmap.ic_launcher_round))
+                .setTitleOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        toast("title");
+                    }
+                }).build();
 
     }
 
