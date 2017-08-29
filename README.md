@@ -4,7 +4,7 @@
 ![](https://img.shields.io/badge/API-15%2B-green.svg)
 
 # BaseLib
-Lightweight Android project dependencies  
+Lightweight Android project dependencies  (Welcome to **Star** and **Fork**)
 ***
 
 <h2>Pictures show</h2>
