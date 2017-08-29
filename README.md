@@ -39,6 +39,10 @@ Add the dependency
     
 </code></pre>
 
+<h2>Thanks</h2>
+
+- [ImmersionBar](https://github.com/gyf-dev/ImmersionBar)
+
 <h2>License</h2>
 <pre><code>
 Copyright 2017 杜洋
