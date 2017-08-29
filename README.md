@@ -39,7 +39,7 @@ Add the dependency
     
 </code></pre>
 
-<h2>Thanks</h2>
+<h2>Open source libraries used in the project</h2>
 
 - [ImmersionBar](https://github.com/gyf-dev/ImmersionBar)
 
