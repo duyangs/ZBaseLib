@@ -6,6 +6,7 @@
 # BaseLib
 Android App 项目 base 引用依赖库
 ***
+
 <h2>Pictures show</h2>
 <div >   
 <img src="image/BaseToolbar.jpg" width = "150" height = "300" alt="BaseToolBar" align=center />
@@ -14,8 +15,11 @@ Android App 项目 base 引用依赖库
 
 <img src="image/ToastUtil.jpg" width = "150" height = "300" alt="ToastUtil" align=center />
 </div>
+
 <h2>Document</h2>
-- [wiki](https://github.com/duyangs/ZBaseLib/wiki)
+
+[wiki](https://github.com/duyangs/ZBaseLib/wiki)
+
 <h2>How to</h2>
 <pre><code>
 Add it in your root build.gradle at the end of repositories:
@@ -34,6 +38,7 @@ Add the dependency
 	}
     
 </code></pre>
+
 <h2>License</h2>
 <pre><code>
 Copyright 2017 杜洋
