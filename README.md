@@ -1,8 +1,8 @@
 <img src="image/dybaselib.jpg"/>
 
-![](https://img.shields.io/badge/JitPack-0.0.1-brightgreen.svg)
-![](https://img.shields.io/badge/API-15%2B-green.svg)
-
+[![](https://img.shields.io/badge/JitPack-0.0.1-brightgreen.svg)](https://jitpack.io/#duyangs/ZBaseLib/0.0.1)
+[![](https://img.shields.io/badge/API-15%2B-green.svg)](https://android-arsenal.com/api?level=15#l15)
+[![](https://img.shields.io/badge/About%20Me-%E6%9D%9C%E6%B4%8B-lightgrey.svg)](https://duyangs.github.io/)
 # BaseLib
 Lightweight Android project dependencies  (Welcome to **Star** and **Fork**)
 ***
