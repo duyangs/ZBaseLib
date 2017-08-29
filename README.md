@@ -18,7 +18,7 @@ Android App 项目 base 引用依赖库
 
 <h2>Document</h2>
 
-[wiki](https://github.com/duyangs/ZBaseLib/wiki)
+- [wiki](https://github.com/duyangs/ZBaseLib/wiki)
 
 <h2>How to</h2>
 <pre><code>
