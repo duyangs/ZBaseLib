@@ -13,7 +13,6 @@ import android.widget.TextView;
 import com.duyangs.zbaselib.BaseActivity;
 import com.duyangs.zbaselib.util.LogUtil;
 import com.duyangs.zbaselib.util.TextSpannableUtil;
-import com.duyangs.zbaselib.util.ToastUtil;
 import com.example.ryandu.zbaselib.R;
 
 
