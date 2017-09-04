@@ -17,6 +17,7 @@
     <!--垂直方向的位移-->
     <!--android:translationZ="4dp"-->
 
+    <!--此处的TextView 就是自定义View的添加位置，结合自身需求可随意修改-->
     <TextView
         android:id="@+id/base_title_text"
         style="?attr/titleTextStyle"/>
