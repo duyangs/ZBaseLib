@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.duyangs.zbaselib.BaseActivity;
-import com.duyangs.zbaselib.util.StartActivityUtil;
 import com.example.ryandu.zbaselib.activity.BaseFragmentShowActivity;
 import com.example.ryandu.zbaselib.activity.TextStyleUtilActivity;
 import com.example.ryandu.zbaselib.activity.ToastUtilActivity;
@@ -58,17 +57,17 @@ public class MainActivity extends BaseActivity implements MainAdapter.OnItemClic
     public void OnItemClick(View view, int position) {
         switch (type[position]){
             case "Toolbar":
-                StartActivityUtil.startActivity(this,ToolbarActivity.class);
+                ToolbarActivity.actionStart(this);
                 break;
             case "Toast":
-                StartActivityUtil.startActivity(this,ToastUtilActivity.class);
+                ToastUtilActivity.actionStart(this);
                 break;
             case "TextStyle":
-                StartActivityUtil.startActivity(this,TextStyleUtilActivity.class);
+                TextStyleUtilActivity.actionStart(this);
                 break;
             case "BaseFragment":
                 BaseFragmentShowActivity.actionStart(this);
                 break;
-        }
+            }
     }
 }

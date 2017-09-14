@@ -25,6 +25,7 @@ public class BaseFragmentShowActivity extends BaseActivity {
 
     private FrameLayout frameLayout;
 
+
     public static void actionStart(Context context){
         StartActivityUtil.startActivity(context,BaseFragmentShowActivity.class);
     }

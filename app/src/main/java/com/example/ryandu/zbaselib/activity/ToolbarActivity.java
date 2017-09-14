@@ -1,5 +1,6 @@
 package com.example.ryandu.zbaselib.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -7,7 +8,7 @@ import android.view.View;
 
 import com.duyangs.zbaselib.BaseActivity;
 import com.duyangs.zbaselib.toolbar.BaseToolbar;
-import com.duyangs.zbaselib.util.ToastUtil;
+import com.duyangs.zbaselib.util.StartActivityUtil;
 import com.example.ryandu.zbaselib.R;
 
 
@@ -21,6 +22,11 @@ import com.example.ryandu.zbaselib.R;
  * @date 2017/04/20 0020
  */
 public class ToolbarActivity extends BaseActivity implements BaseToolbar.OnClickListener {
+
+
+    public static void actionStart(Context context){
+        StartActivityUtil.startActivity(context,ToolbarActivity.class);
+    }
 
     @Override
     protected int bindLayout() {

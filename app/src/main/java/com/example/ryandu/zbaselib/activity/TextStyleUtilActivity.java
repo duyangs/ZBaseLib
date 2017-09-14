@@ -1,5 +1,6 @@
 package com.example.ryandu.zbaselib.activity;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Layout;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import com.duyangs.zbaselib.BaseActivity;
 import com.duyangs.zbaselib.util.LogUtil;
+import com.duyangs.zbaselib.util.StartActivityUtil;
 import com.duyangs.zbaselib.util.TextSpannableUtil;
 import com.example.ryandu.zbaselib.R;
 
@@ -27,6 +29,10 @@ import com.example.ryandu.zbaselib.R;
  */
 public class TextStyleUtilActivity extends BaseActivity {
     private LinearLayout linearLayout;
+
+    public static void actionStart(Context context){
+        StartActivityUtil.startActivity(context,TextStyleUtilActivity.class);
+    }
 
     @Override
     protected int bindLayout() {

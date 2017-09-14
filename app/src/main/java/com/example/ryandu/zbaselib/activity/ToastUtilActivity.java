@@ -1,10 +1,12 @@
 package com.example.ryandu.zbaselib.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import com.duyangs.zbaselib.BaseActivity;
+import com.duyangs.zbaselib.util.StartActivityUtil;
 import com.duyangs.zbaselib.util.ToastUtil;
 import com.example.ryandu.zbaselib.R;
 
@@ -19,6 +21,10 @@ import com.example.ryandu.zbaselib.R;
  */
 public class ToastUtilActivity extends BaseActivity {
     private Button topBtn;
+
+    public static void actionStart(Context context){
+        StartActivityUtil.startActivity(context,ToastUtilActivity.class);
+    }
     @Override
     protected int bindLayout() {
         return R.layout.activity_toast;
