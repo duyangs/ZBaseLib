@@ -59,7 +59,9 @@ public class BaseFragmentShowActivity extends BaseActivity {
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
 
     }
+
+
 }

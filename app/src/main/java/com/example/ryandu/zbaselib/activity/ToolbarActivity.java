@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.duyangs.zbaselib.BaseActivity;
+import com.duyangs.zbaselib.toast.ToastUtil;
 import com.duyangs.zbaselib.toolbar.BaseToolbar;
 import com.duyangs.zbaselib.util.StartActivityUtil;
 import com.example.ryandu.zbaselib.R;
@@ -45,14 +46,14 @@ public class ToolbarActivity extends BaseActivity implements BaseToolbar.OnClick
                 .setTitleOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        toast("title");
+                        toast("title", ToastUtil.TYPE_INFO);
                     }
                 }).build();
 
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
 
     }
 
@@ -64,7 +65,7 @@ public class ToolbarActivity extends BaseActivity implements BaseToolbar.OnClick
 
     @Override
     public void navigationOnClick(View v) {
-        toast("back");
+        toast("back",ToastUtil.TYPE_INFO);
         finish();
     }
 
@@ -83,7 +84,7 @@ public class ToolbarActivity extends BaseActivity implements BaseToolbar.OnClick
                 msg = R.string.bar_setting;
                 break;
         }
-        toast(msg);
+        toast(msg,ToastUtil.TYPE_INFO);
         return true;
     }
 }

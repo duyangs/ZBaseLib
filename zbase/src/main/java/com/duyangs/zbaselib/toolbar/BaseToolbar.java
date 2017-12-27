@@ -53,14 +53,14 @@ public class BaseToolbar {
      * 初始化ToolBar
      */
     private void initToolbar() {
-        mToolbar = (Toolbar) appCompatActivity.findViewById(R.id.base_title);
+        mToolbar = appCompatActivity.findViewById(R.id.base_title);
         if (mToolbar == null) {
            return;
         }
         appCompatActivity.setSupportActionBar(mToolbar);
         appCompatActivity.getSupportActionBar().setDisplayShowTitleEnabled(false);
 //            getSupportActionBar().setDisplayShowTitleEnabled(true);
-        titleTextView = (TextView) appCompatActivity.findViewById(R.id.base_title_text);
+        titleTextView = appCompatActivity.findViewById(R.id.base_title_text);
         initListener();
         setTitleText();
         setTitleTextIcon();

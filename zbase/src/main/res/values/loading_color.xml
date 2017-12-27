@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="loading_triangle">#aa72d572</color>
+    <color name="loading_circle">#aa738ffe</color>
+    <color name="loading_rect">#aae84e40</color>
+    <color name="loading_view_bg">#00000000</color>
+    <color name="loading_shadow">#25808080</color>
+    <color name="loading_dialog_bg">#00000000</color>
+
+</resources>

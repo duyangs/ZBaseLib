@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.duyangs.zbaselib.BaseActivity;
 import com.example.ryandu.zbaselib.activity.BaseFragmentShowActivity;
+import com.example.ryandu.zbaselib.activity.LoadingActivity;
 import com.example.ryandu.zbaselib.activity.TextStyleUtilActivity;
 import com.example.ryandu.zbaselib.activity.ToastUtilActivity;
 import com.example.ryandu.zbaselib.activity.ToolbarActivity;
@@ -22,7 +23,8 @@ public class MainActivity extends BaseActivity implements MainAdapter.OnItemClic
             "Toolbar"
             , "Toast"
             , "TextStyle"
-            , "BaseFragment"};
+            , "BaseFragment"
+            , "Loading"};
 
     private MainAdapter adapter;
 
@@ -41,7 +43,7 @@ public class MainActivity extends BaseActivity implements MainAdapter.OnItemClic
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
         adapter = new MainAdapter(this,type);
         adapter.setOnItemClickListener(this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -67,6 +69,9 @@ public class MainActivity extends BaseActivity implements MainAdapter.OnItemClic
                 break;
             case "BaseFragment":
                 BaseFragmentShowActivity.actionStart(this);
+                break;
+            case "Loading":
+                LoadingActivity.actionStart(this);
                 break;
             }
     }

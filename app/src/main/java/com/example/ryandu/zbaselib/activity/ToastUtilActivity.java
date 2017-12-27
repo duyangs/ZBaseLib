@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import com.duyangs.zbaselib.BaseActivity;
 import com.duyangs.zbaselib.util.StartActivityUtil;
-import com.duyangs.zbaselib.util.ToastUtil;
+import com.duyangs.zbaselib.toast.ToastUtil;
 import com.example.ryandu.zbaselib.R;
 
 /**
@@ -43,29 +43,29 @@ public class ToastUtilActivity extends BaseActivity {
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
 
     }
 
     public void onClick(View view){
         switch (view.getId()){
             case R.id.ac_toast_top_short:
-                ToastUtil.showShortTop(this,"top toast short");
+                ToastUtil.showShortTop(this,"top toast short",ToastUtil.TYPE_ERROR);
                 break;
             case R.id.ac_toast_center_short:
-                ToastUtil.showShortCenter(this,"center toast short");
+                ToastUtil.showShortCenter(this,"center toast short",ToastUtil.TYPE_INFO);
                 break;
             case R.id.ac_toast_bottom_short:
-                ToastUtil.showShortBottom(this,R.string.toast_bottom);
+                ToastUtil.showShortBottom(this,R.string.toast_bottom,ToastUtil.TYPE_SUCCESS);
                 break;
             case R.id.ac_toast_top_long:
-                ToastUtil.showShortCenter(this,"top toast long");
+                ToastUtil.showLongTop(this,"top toast long",ToastUtil.TYPE_WARNING);
                 break;
             case R.id.ac_toast_center_long:
-                ToastUtil.showShortCenter(this,"center toast long");
+                ToastUtil.showLongCenter(this,"center toast long",ToastUtil.TYPE_SUCCESS);
                 break;
             case R.id.ac_toast_bottom_long:
-                ToastUtil.showShortCenter(this,"bottom toast long");
+                ToastUtil.showLongBottom(this,"bottom toast long",ToastUtil.TYPE_INFO);
                 break;
             case R.id.ac_toast_cancel:
                 ToastUtil.cancelToast();

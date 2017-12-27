@@ -20,223 +20,94 @@ import java.util.Stack;
  * @author duyangs
  * @date 2017/04/21 0021
  */
-public class BaseActivityManager {
-    public static final String TAG = "BaseActivityManager";
-    private static Stack<WeakReference<Activity>> activityStack;
+public enum  BaseActivityManager {
 
-    private BaseActivityManager() {
-    }
+    INSTANCE;
 
-    //懒汉单例模式 low
-//    public static BaseActivityManager getInstance() {
-//        if (instance == null){
-//            instance = new BaseActivityManager();
-//        }
-//        return instance;
-//    }
+    private static Stack<Activity> activityStack;
 
-    //Double Check Lock(DCL)实现单例  某些情况下会失效
-//    public static BaseActivityManager getInstance(){
-//        if (instance == null){
-//            synchronized (BaseActivityManager.class){
-//                if (instance == null){
-//                    instance = new BaseActivityManager();
-//                }
-//            }
-//        }
-//        return instance;
-//    }
-
-    public static BaseActivityManager getInstance() {
-        return BaseActivityManagerHolder.instance;
-    }
-
-    private static class BaseActivityManagerHolder {
-        private static final BaseActivityManager instance = new BaseActivityManager();
+    /**
+     * 获取当前Activity
+     */
+    public Activity currentActivity() {
+        Activity activity = activityStack.lastElement();
+        return activity;
     }
 
     /**
-     * @return 栈长度
+     * 添加一个Activity
      */
-    public int StackSize(){
-        return activityStack.size();
-    }
-
-    /***
-     * 获得Activity栈
-     *
-     * @return Activity栈
-     */
-    public Stack<WeakReference<Activity>> getStack() {
-        return activityStack;
-    }
-
-    /**
-     * 添加指定Activity到堆栈
-     */
-    public void addActivity(WeakReference<Activity> activity) {
+    public void addActivity(Activity activity) {
         if (activityStack == null) {
-            activityStack = new Stack<>();
+            activityStack = new Stack<Activity>();
         }
         activityStack.add(activity);
     }
 
     /**
-     * 获取当前Activity 栈顶
+     * 移除一个Activity
      */
-    public Activity currentActivity() {
-        try {
-            WeakReference<Activity> activity = activityStack.lastElement();
-            return activity.get();
-        } catch (Exception e) {
-            LogUtil.e(TAG, e.getMessage());
+    public void removeActivity(Activity activity) {
+        if (activityStack == null) {
+            activityStack = new Stack<Activity>();
         }
-
-        return null;
-    }
-
-    public Context applicationContext() {
-        return currentActivity().getApplicationContext();
+        activityStack.remove(activity);
     }
 
     /**
      * 结束当前Activity
      */
-    public void deleteActivity() {
-        try {
-            if (activityStack != null) {
-                WeakReference<Activity> activity = activityStack.lastElement();
-                deleteActivity(activity);
-            }
-        } catch (Exception e) {
-            LogUtil.e(TAG, e.getMessage());
-        }
-
+    public void finishActivity() {
+        Activity activity = activityStack.lastElement();
+        finishActivity(activity);
     }
 
     /**
-     * 结束指定的Activity
+     * 结束一个Activity
      */
-    public void deleteActivity(WeakReference<Activity> activity) {
-
-        try {
-            Iterator<WeakReference<Activity>> iterator = activityStack.iterator();
-            while (iterator.hasNext()) {
-                WeakReference<Activity> stackActivity = iterator.next();
-                if (stackActivity.get() == null) {
-                    iterator.remove();
-                    continue;
-                }
-                if (stackActivity.get().getClass().getName().equals(activity.get().getClass().getName())) {
-                    iterator.remove();
-                    stackActivity.get().finish();
-                    break;
-                }
-            }
-        } catch (Exception e) {
-            LogUtil.e(TAG, e.getMessage());
-        }
-
-    }
-
-    /**
-     * 结束指定Class的Activity
-     */
-    public void deleteActivity(Class<?> cls) {
-        try {
-
-            ListIterator<WeakReference<Activity>> listIterator = activityStack.listIterator();
-            while (listIterator.hasNext()) {
-                Activity activity = listIterator.next().get();
-                if (activity == null) {
-                    listIterator.remove();
-                    continue;
-                }
-                if (activity.getClass() == cls) {
-                    listIterator.remove();
-                    if (activity != null) {
-                        activity.finish();
-                    }
-                    break;
-                }
-            }
-        } catch (Exception e) {
-            LogUtil.e(TAG, e.getMessage());
-        }
-
-    }
-
-    /**
-     * 结束全部的Activity
-     */
-    public void deleteAllActivity() {
-        try {
-            ListIterator<WeakReference<Activity>> listIterator = activityStack.listIterator();
-            while (listIterator.hasNext()) {
-                Activity activity = listIterator.next().get();
-                if (activity != null) {
-                    activity.finish();
-                }
-                listIterator.remove();
-            }
-        } catch (Exception e) {
-            LogUtil.e(TAG, e.getMessage());
-        }
-
-    }
-
-    /**
-     * 移除除了某个activity的其他所有activity
-     *
-     * @param cls 界面
-     */
-    public void deleteOthersActivity(Class cls) {
-        try {
-            for (int i = 0; i < activityStack.size(); i++) {
-                Activity activity = activityStack.get(i).get();
-                Class thisClass = activity.getClass();
-                if (thisClass.equals(cls)) {
-                    break;
-                }
-                if (activityStack.get(i) != null) {
-                    deleteActivity(activityStack.get(i));
-                }
-            }
-        } catch (Exception e) {
-            LogUtil.e(TAG, e.getMessage());
+    public void finishActivity(Activity activity) {
+        if (activity != null) {
+            removeActivity(activity);
+            activity.finish();
+            activity = null;
         }
     }
 
     /**
-     * @return 获取指定类名的Activity
+     * 结束一个Activity,根据class
      */
-    public Activity getActivity(Class<?> cls) {
-        try {
-            if (activityStack != null) {
-                for (WeakReference<Activity> activity : activityStack) {
-                    if (activity.getClass().equals(cls)) {
-                        return activity.get();
-                    }
-                }
+    public void finishActivity(Class<?> cls) {
+        for (Activity activity : activityStack) {
+            if (activity.getClass().equals(cls)) {
+                finishActivity(activity);
             }
-        } catch (Exception e) {
-            LogUtil.e(TAG, e.getMessage());
         }
-
-        return null;
     }
 
     /**
-     * 退出应用程序
+     * 结束所有Activity
      */
-    public void AppExit() {
-        try {
-            deleteAllActivity();
-            android.app.ActivityManager activityMgr = (android.app.ActivityManager) applicationContext().getSystemService(Context.ACTIVITY_SERVICE);
-            activityMgr.restartPackage(applicationContext().getPackageName());
-            System.exit(0);
-        } catch (Exception e) {
-            LogUtil.e(TAG, e.getMessage());
+    public void finishAllActivity() {
+        for (Activity activity : activityStack) {
+            if (null != activity) {
+                activity.finish();
+            }
         }
+        activityStack.clear();
+    }
+
+    /**
+     * 退出应用程序 -> 杀进程
+     */
+    public void exit() {
+        exit2();
+        android.os.Process.killProcess(android.os.Process.myPid());
+    }
+
+    /**
+     * 退出应用程序 -> 不杀进程,只是关掉所有Activity
+     */
+    public void exit2() {
+        finishAllActivity();
     }
 }

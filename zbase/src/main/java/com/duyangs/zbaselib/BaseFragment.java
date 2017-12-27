@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.duyangs.zbaselib.util.LogUtil;
-import com.duyangs.zbaselib.util.ToastUtil;
+import com.duyangs.zbaselib.toast.ToastUtil;
 
 
 /**
@@ -128,47 +128,6 @@ public abstract class BaseFragment extends Fragment {
     protected abstract void initData();
 
     /**
-     * 页面跳转
-     *
-     * @param clz 要跳转的类
-     */
-    public void startActivity(Class<?> clz) {
-        startActivity(new Intent(mActivity,clz));
-    }
-
-    /**
-     * 携带数据的页面跳转
-     *
-     * @param clz 要跳转的类
-     * @param bundle 数据
-     */
-    public void startActivity(Class<?> clz, Bundle bundle) {
-        Intent intent = new Intent();
-        intent.setClass(mActivity, clz);
-        if (bundle != null) {
-            intent.putExtras(bundle);
-        }
-        startActivity(intent);
-    }
-
-    /**
-     * 含有Bundle通过Class打开编辑界面
-     *
-     * @param cls 要跳转的类
-     * @param bundle 携带的数据
-     * @param requestCode 请求码
-     */
-    public void startActivityForResult(Class<?> cls, Bundle bundle,
-                                       int requestCode) {
-        Intent intent = new Intent();
-        intent.setClass(mActivity, cls);
-        if (bundle != null) {
-            intent.putExtras(bundle);
-        }
-        startActivityForResult(intent, requestCode);
-    }
-
-    /**
      * 绑定控件
      *
      * @param resId 资源id
@@ -183,8 +142,8 @@ public abstract class BaseFragment extends Fragment {
      * toast 该出为居中短显示
      * @param msg 显示内容
      */
-    protected void toast(Object msg){
-        ToastUtil.showShortCenter(mActivity,msg);
+    protected void toast(Object msg,int type){
+        ToastUtil.showShortCenter(mActivity,msg,type);
     }
 
 }

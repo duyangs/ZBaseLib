@@ -1,6 +1,7 @@
 package com.duyangs.zbaselib;
 
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -8,8 +9,9 @@ import android.view.View;
 
 import com.duyangs.zbaselib.toolbar.BaseToolbar;
 import com.duyangs.zbaselib.toolbar.DefaultBarOnClickListener;
+import com.duyangs.zbaselib.util.ATAUtil;
 import com.duyangs.zbaselib.util.LogUtil;
-import com.duyangs.zbaselib.util.ToastUtil;
+import com.duyangs.zbaselib.toast.ToastUtil;
 import com.gyf.barlibrary.ImmersionBar;
 
 
@@ -49,7 +51,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         initToolBarBuilder();
         initParams(bundle);
         initView();
-        initData();
+        initData(savedInstanceState);
+        BaseActivityManager.INSTANCE.addActivity(this);
     }
 
     /**
@@ -76,7 +79,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     /**
      * 初始化数据
      */
-    protected abstract void initData();
+    protected abstract void initData(Bundle savedInstanceState);
 
     private void initToolBarBuilder() {
         toolBarBuilder = BaseToolbar.newInstance(this);
@@ -99,17 +102,18 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * 应用场景在于动态修改页面Title
+     *
      * @param title
      */
-    protected void setBarTitle(String title){
+    protected void setBarTitle(String title) {
         toolBarBuilder.getBaseToolbar().setTitle(title);
     }
 
-    protected void setBarTitle(int titleId){
+    protected void setBarTitle(int titleId) {
         toolBarBuilder.getBaseToolbar().setTitle(getString(titleId));
     }
 
-    protected void setBarTitleIcon(Drawable icon){
+    protected void setBarTitleIcon(Drawable icon) {
         toolBarBuilder.getBaseToolbar().setTitleDrawable(icon);
     }
 
@@ -129,8 +133,8 @@ public abstract class BaseActivity extends AppCompatActivity {
      *
      * @param msg 显示内容
      */
-    protected void toast(Object msg) {
-        ToastUtil.showShortCenter(this,msg);
+    protected void toast(Object msg,int type) {
+        ToastUtil.showShortCenter(this, msg, type);
     }
 
     @Override
@@ -167,9 +171,13 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         LogUtil.d(TAG, "onDestroy()");
-//        AppManager.getInstance().addActivity(this);
+        BaseActivityManager.INSTANCE.finishActivity(this);
         ImmersionBar.with(this).destroy();  //不调用该方法，如果界面bar发生改变，在不关闭app的情况下，退出此界面再进入将记忆最后一次bar改变的状态
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        ATAUtil.out(this);
+    }
 }

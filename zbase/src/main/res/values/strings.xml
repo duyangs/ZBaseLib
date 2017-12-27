@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ZBaseLib</string>
+    <string name="toast_message">Toast message</string>
 </resources>
