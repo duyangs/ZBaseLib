@@ -1,6 +1,11 @@
 package com.duyangs.zbaselib.loadingView;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.view.WindowManager;
+
+import com.duyangs.zbaselib.util.LogUtil;
 
 /**
  * "loading" ZBaseLib
@@ -13,12 +18,25 @@ public class LoadingUtil {
 
     private static ShapeLoadingDialog shapeLoadingDialog;
 
-    public static void show(Activity activity, String msg) {
-        showNow(activity,msg,false);
+    public static void show(Context context, String msg) {
+        try {
+            showNow(context, msg, false);
+        } catch (WindowManager.BadTokenException e) {
+            LogUtil.e("LoadingUtil", e.getMessage());
+            dismiss();
+            showNow(context, msg, false);
+        }
     }
 
-    public static void showCanCancel(Activity activity, String msg) {
-        showNow(activity,msg,true);
+    public static void showCanCancel(Context context, String msg) {
+        try {
+            showNow(context, msg, true);
+        } catch (WindowManager.BadTokenException e) {
+            LogUtil.e("LoadingUtil", e.getMessage());
+            dismiss();
+            showNow(context, msg, true);
+        }
+
     }
 
     public static void dismiss() {
@@ -29,10 +47,10 @@ public class LoadingUtil {
 
     }
 
-    private static void showNow(Activity activity,String msg,boolean isCancel){
+    private static void showNow(Context context, String msg, boolean isCancel) {
 
         if (shapeLoadingDialog == null) {
-            shapeLoadingDialog = new ShapeLoadingDialog.Builder(activity)
+            shapeLoadingDialog = new ShapeLoadingDialog.Builder(context)
                     .build();
         }
         if (msg != null) {
