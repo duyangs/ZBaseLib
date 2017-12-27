@@ -1,8 +1,8 @@
 <img src="image/dybaselib.jpg"/>
 
-[![](https://img.shields.io/badge/JitPack-0.0.1-brightgreen.svg)](https://jitpack.io/#duyangs/ZBaseLib/0.0.1)
+[![](https://jitpack.io/v/duyangs/ZBaseLib.svg)](https://jitpack.io/#duyangs/ZBaseLib)
 [![](https://img.shields.io/badge/API-15%2B-green.svg)](https://android-arsenal.com/api?level=15#l15)
-[![](https://img.shields.io/badge/About%20Me-%E6%9D%9C%E6%B4%8B-lightgrey.svg)](https://duyangs.github.io/)
+[![](https://img.shields.io/badge/About%20Me-%E6%9D%9C%E6%B4%8B-lightgrey.svg)](https://www.ximimax.cn/)
 # BaseLib
 Lightweight Android project dependencies  (Welcome to **Star** and **Fork**)
 ***
@@ -14,6 +14,8 @@ Lightweight Android project dependencies  (Welcome to **Star** and **Fork**)
 <img src="image/TextSpannableUtil.jpg" width = "150" height = "300" alt="TextSpannableUtil" align=center />
 
 <img src="image/ToastUtil.jpg" width = "150" height = "300" alt="ToastUtil" align=center />
+
+<img src="image/loading.gif" with = "150" height = "300" alt="LoadingUtil" align=center />
 </div>
 
 <h2>Document</h2>
@@ -34,7 +36,7 @@ Add it in your root build.gradle at the end of repositories:
 Add the dependency
 
 		dependencies {
-	        compile 'com.github.duyangs:ZBaseLib:0.0.1'
+	        compile 'com.github.duyangs:ZBaseLib:0.1.0'
 	}
     
 </code></pre>
@@ -42,6 +44,8 @@ Add the dependency
 <h2>Open source libraries used in the project</h2>
 
 - [ImmersionBar](https://github.com/gyf-dev/ImmersionBar)
+- [android-shapeLoadingView](https://github.com/zzz40500/android-shapeLoadingView)
+- [Toasty](https://github.com/GrenderG/Toasty)
 
 <h2>License</h2>
 <pre><code>
