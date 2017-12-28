@@ -3,11 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ZBaseLib.iml" filepath="$PROJECT_DIR$/ZBaseLib.iml" />
-      <module fileurl="file://E:\Android\AndroidStudioProjects\MyApplication\ZBaseLib\ZBaseLib.iml" filepath="E:\Android\AndroidStudioProjects\MyApplication\ZBaseLib\ZBaseLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://E:\Android\AndroidStudioProjects\MyApplication\ZBaseLib\app\app.iml" filepath="E:\Android\AndroidStudioProjects\MyApplication\ZBaseLib\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/zbase/zbase.iml" filepath="$PROJECT_DIR$/zbase/zbase.iml" />
-      <module fileurl="file://E:\Android\AndroidStudioProjects\MyApplication\ZBaseLib\zbase\zbase.iml" filepath="E:\Android\AndroidStudioProjects\MyApplication\ZBaseLib\zbase\zbase.iml" />
     </modules>
   </component>
 </project>
