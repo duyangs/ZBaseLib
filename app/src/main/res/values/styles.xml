@@ -4,7 +4,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <!--Toolbar颜色-->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
         <!--状态栏颜色-->
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <!--checkBox 等控件选中颜色-->

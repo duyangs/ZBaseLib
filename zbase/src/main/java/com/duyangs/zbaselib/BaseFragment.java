@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 
 import com.duyangs.zbaselib.util.LogUtil;
 import com.duyangs.zbaselib.toast.ToastUtil;
+import com.gyf.barlibrary.ImmersionBar;
 
 
 /**
@@ -32,6 +34,9 @@ public abstract class BaseFragment extends Fragment {
     protected Activity mActivity;
 
     protected View mView;
+
+    protected ImmersionBar mImmersionBar;
+
 
     @Override
     public void onAttach(Context context) {
@@ -62,6 +67,12 @@ public abstract class BaseFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         LogUtil.d(TAG,"onActivityCreate()");
         initData();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        initImmersionBar();
     }
 
     @Override
@@ -101,6 +112,9 @@ public abstract class BaseFragment extends Fragment {
     public void onDestroy() {
         super.onDestroy();
         LogUtil.d(TAG,"onDestroy()");
+        if (mImmersionBar != null) {
+            mImmersionBar.destroy();
+        }
     }
 
     @Override
@@ -144,6 +158,18 @@ public abstract class BaseFragment extends Fragment {
      */
     protected void toast(Object msg,int type){
         ToastUtil.showShortCenter(mActivity,msg,type);
+    }
+
+    /**
+     * 初始化沉浸式
+     */
+    protected void initImmersionBar() {
+        mImmersionBar = ImmersionBar.with(this);
+        mImmersionBar.statusBarColor("00000000")
+                .fitsSystemWindows(true)  //使用该属性必须指定状态栏的颜色，不然状态栏透明，很难看
+                .statusBarAlpha(0.0f)  //状态栏透明度，不写默认0.0f
+                .statusBarDarkFont(true)   //状态栏字体是深色，不写默认为亮色
+                .init();
     }
 
 }

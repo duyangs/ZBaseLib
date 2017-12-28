@@ -1,5 +1,6 @@
 package com.duyangs.zbaselib.toolbar;
 
+import android.app.Activity;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -15,9 +16,9 @@ import com.duyangs.zbaselib.BaseActivity;
  * @date 2017/06/14 0014
  */
 public class DefaultBarOnClickListener implements BaseToolbar.OnClickListener {
-    private BaseActivity baseActivity;
+    private Activity baseActivity;
 
-    private DefaultBarOnClickListener(BaseActivity baseActivity) {
+    private DefaultBarOnClickListener(Activity baseActivity) {
         this.baseActivity = baseActivity;
     }
 

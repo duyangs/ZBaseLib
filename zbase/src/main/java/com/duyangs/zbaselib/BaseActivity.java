@@ -33,6 +33,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected BaseToolbar.Builder toolBarBuilder;
 
+    protected ImmersionBar mImmersionBar;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,18 +43,25 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (bindLayout() != 0) {
             setContentView(bindLayout());
         }
-//        AppManager.getInstance().addActivity(this);
         Bundle bundle = getIntent().getExtras();
-        ImmersionBar.with(this)
-                .statusBarColor("#ffffff")
-                .fitsSystemWindows(true)  //使用该属性必须指定状态栏的颜色，不然状态栏透明，很难看
-                .statusBarAlpha(0.3f)  //状态栏透明度，不写默认0.0f
-                .init();
+        initImmersionBar();
         initToolBarBuilder();
         initParams(bundle);
         initView();
         initData(savedInstanceState);
         BaseActivityManager.INSTANCE.addActivity(this);
+    }
+
+    /**
+     * 初始化 ImmersionBar
+     */
+    protected void initImmersionBar(){
+        mImmersionBar = ImmersionBar.with(this);
+        mImmersionBar.statusBarColor("#ffffff")
+                .fitsSystemWindows(true)  //使用该属性必须指定状态栏的颜色，不然状态栏透明，很难看
+                .statusBarAlpha(0.0f)  //状态栏透明度，不写默认0.0f
+                .statusBarDarkFont(true)   //状态栏字体是深色，不写默认为亮色
+                .init();
     }
 
     /**
@@ -133,7 +142,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      *
      * @param msg 显示内容
      */
-    protected void toast(Object msg,int type) {
+    protected void toast(Object msg, int type) {
         ToastUtil.showShortCenter(this, msg, type);
     }
 
@@ -172,7 +181,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onDestroy();
         LogUtil.d(TAG, "onDestroy()");
         BaseActivityManager.INSTANCE.finishActivity(this);
-        ImmersionBar.with(this).destroy();  //不调用该方法，如果界面bar发生改变，在不关闭app的情况下，退出此界面再进入将记忆最后一次bar改变的状态
+        if (mImmersionBar != null) {
+            mImmersionBar.destroy();
+        }//不调用该方法，如果界面bar发生改变，在不关闭app的情况下，退出此界面再进入将记忆最后一次bar改变的状态
     }
 
     @Override
