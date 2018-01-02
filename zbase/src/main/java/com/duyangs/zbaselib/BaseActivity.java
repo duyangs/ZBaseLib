@@ -1,7 +1,6 @@
 package com.duyangs.zbaselib;
 
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +10,7 @@ import com.duyangs.zbaselib.toolbar.BaseToolbar;
 import com.duyangs.zbaselib.toolbar.DefaultBarOnClickListener;
 import com.duyangs.zbaselib.util.ATAUtil;
 import com.duyangs.zbaselib.util.LogUtil;
-import com.duyangs.zbaselib.toast.ToastUtil;
+import com.duyangs.zbaselib.toast.ToastZ;
 import com.gyf.barlibrary.ImmersionBar;
 
 
@@ -135,15 +134,6 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     protected <T extends View> T findById(int resId) {
         return (T) super.findViewById(resId);
-    }
-
-    /**
-     * toast 该出为居中短显示
-     *
-     * @param msg 显示内容
-     */
-    protected void toast(Object msg, int type) {
-        ToastUtil.showShortCenter(this, msg, type);
     }
 
     @Override

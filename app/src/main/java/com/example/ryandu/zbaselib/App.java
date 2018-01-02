@@ -2,6 +2,7 @@ package com.example.ryandu.zbaselib;
 
 import android.app.Application;
 
+import com.duyangs.zbaselib.ZBase;
 import com.duyangs.zbaselib.util.LogUtil;
 
 
@@ -30,5 +31,7 @@ public class App extends Application {
          * 初始化 LogUtil 并设置是否显示日志
          */
         logBuilder = new LogUtil.Builder().setLogOn(true);
+
+        ZBase.init(this);
     }
 }

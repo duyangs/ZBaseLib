@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.duyangs.zbaselib.BaseActivity;
-import com.duyangs.zbaselib.toast.ToastUtil;
+import com.duyangs.zbaselib.toast.ToastZ;
 import com.duyangs.zbaselib.util.LogUtil;
 import com.duyangs.zbaselib.util.StartActivityUtil;
 import com.duyangs.zbaselib.util.TextSpannableUtil;
@@ -60,7 +60,7 @@ public class TextStyleUtilActivity extends BaseActivity {
         ClickableSpan clickableSpan = new ClickableSpan() {
             @Override
             public void onClick(View widget) {
-                toast("事件触发了", ToastUtil.TYPE_INFO);
+                ToastZ.info("事件触发了");
             }
 
             @Override
@@ -172,7 +172,7 @@ public class TextStyleUtilActivity extends BaseActivity {
                             .setOnClickListener(textView1, new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    toast("点击事件",ToastUtil.TYPE_INFO);
+                                    ToastZ.info("点击事件");
                                 }
                             }).build())
                     .addText(new TextSpannableUtil.TextStyle.Builder()

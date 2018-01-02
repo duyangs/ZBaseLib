@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import com.duyangs.zbaselib.BaseActivity;
 import com.duyangs.zbaselib.util.StartActivityUtil;
-import com.duyangs.zbaselib.toast.ToastUtil;
+import com.duyangs.zbaselib.toast.ToastZ;
 import com.example.ryandu.zbaselib.R;
 
 /**
@@ -22,9 +22,10 @@ import com.example.ryandu.zbaselib.R;
 public class ToastUtilActivity extends BaseActivity {
     private Button topBtn;
 
-    public static void actionStart(Context context){
-        StartActivityUtil.startActivity(context,ToastUtilActivity.class);
+    public static void actionStart(Context context) {
+        StartActivityUtil.startActivity(context, ToastUtilActivity.class);
     }
+
     @Override
     protected int bindLayout() {
         return R.layout.activity_toast;
@@ -39,7 +40,6 @@ public class ToastUtilActivity extends BaseActivity {
     @Override
     protected void initView() {
         //使用 baseActivity 中的 $()方法声明变量
-        topBtn = findById(R.id.ac_toast_top_short);
     }
 
     @Override
@@ -47,28 +47,23 @@ public class ToastUtilActivity extends BaseActivity {
 
     }
 
-    public void onClick(View view){
-        switch (view.getId()){
-            case R.id.ac_toast_top_short:
-                ToastUtil.showShortTop(this,"top toast short",ToastUtil.TYPE_ERROR);
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.normal:
+                ToastZ.normal("normal");
                 break;
-            case R.id.ac_toast_center_short:
-                ToastUtil.showShortCenter(this,"center toast short",ToastUtil.TYPE_INFO);
+            case R.id.success:
+                ToastZ.success("success");
                 break;
-            case R.id.ac_toast_bottom_short:
-                ToastUtil.showShortBottom(this,R.string.toast_bottom,ToastUtil.TYPE_SUCCESS);
+            case R.id.warning:
+                ToastZ.warning("warning");
                 break;
-            case R.id.ac_toast_top_long:
-                ToastUtil.showLongTop(this,"top toast long",ToastUtil.TYPE_WARNING);
+            case R.id.error:
+                ToastZ.error("error");
                 break;
-            case R.id.ac_toast_center_long:
-                ToastUtil.showLongCenter(this,"center toast long",ToastUtil.TYPE_SUCCESS);
-                break;
-            case R.id.ac_toast_bottom_long:
-                ToastUtil.showLongBottom(this,"bottom toast long",ToastUtil.TYPE_INFO);
-                break;
+
             case R.id.ac_toast_cancel:
-                ToastUtil.cancelToast();
+                ToastZ.cancelToast();
                 break;
         }
     }

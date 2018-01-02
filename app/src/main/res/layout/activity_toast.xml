@@ -6,38 +6,26 @@
     android:padding="10dp">
 
     <Button
-        android:id="@+id/ac_toast_top_short"
+        android:id="@+id/normal"
         style="@style/MainTextStyle"
-        android:text="top toast short"/>
+        android:text="normal"/>
 
     <Button
-        android:id="@+id/ac_toast_center_short"
+        android:id="@+id/success"
         style="@style/MainTextStyle"
-        android:text="center toast short"
+        android:text="success"
         android:layout_marginTop="10dp"/>
 
     <Button
-        android:id="@+id/ac_toast_bottom_short"
+        android:id="@+id/warning"
         style="@style/MainTextStyle"
-        android:text="bottom toast short"
+        android:text="warning"
         android:layout_marginTop="10dp"/>
 
     <Button
-        android:id="@+id/ac_toast_top_long"
+        android:id="@+id/error"
         style="@style/MainTextStyle"
-        android:text="top toast long"
-        android:layout_marginTop="10dp"/>
-
-    <Button
-        android:id="@+id/ac_toast_center_long"
-        style="@style/MainTextStyle"
-        android:text="center toast long"
-        android:layout_marginTop="10dp" />
-
-    <Button
-        android:id="@+id/ac_toast_bottom_long"
-        style="@style/MainTextStyle"
-        android:text="bottom toast long"
+        android:text="error"
         android:layout_marginTop="10dp"/>
 
     <Button
