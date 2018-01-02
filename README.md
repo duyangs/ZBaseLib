@@ -35,7 +35,7 @@ Add it in your root build.gradle at the end of repositories:
     
 Add the dependency
 
-		dependencies {
+	dependencies {
 	        compile 'com.github.duyangs:ZBaseLib:0.1.1'
 	}
     
