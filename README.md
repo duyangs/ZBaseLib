@@ -13,7 +13,7 @@ Lightweight Android project dependencies  (Welcome to **Star** and **Fork**)
 
 <img src="image/TextSpannableUtil.jpg" width = "150" height = "300" alt="TextSpannableUtil" align=center />
 
-<img src="image/ToastUtil.jpg" width = "150" height = "300" alt="ToastUtil" align=center />
+<img src="image/ToastZ.gif" width = "150" height = "300" alt="ToastUtil" align=center />
 
 <img src="image/loading.gif" with = "150" height = "300" alt="LoadingUtil" align=center />
 </div>
@@ -36,7 +36,7 @@ Add it in your root build.gradle at the end of repositories:
 Add the dependency
 
 	dependencies {
-	        compile 'com.github.duyangs:ZBaseLib:0.1.3'
+	        compile 'com.github.duyangs:ZBaseLib:0.1.4'
 	}
     
 </code></pre>
@@ -49,7 +49,7 @@ Add the dependency
 
 <h2>License</h2>
 <pre><code>
-Copyright 2017 杜洋
+Copyright 2018 杜洋
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
