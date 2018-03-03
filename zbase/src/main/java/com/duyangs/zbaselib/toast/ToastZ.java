@@ -223,7 +223,7 @@ public class ToastZ {
         toastTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
 
         mToast.setView(toastLayout);
-        mToast.setGravity(gravity == -1 ? GRAVITY : gravity, 0, (gravity == Gravity.CENTER) ? 0 : 100);
+        mToast.setGravity(gravity == -1 ? GRAVITY : gravity, 0, (gravity == Gravity.CENTER) ? 0 : 200);
 
         mToast.show();
     }

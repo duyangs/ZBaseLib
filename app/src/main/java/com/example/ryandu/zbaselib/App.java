@@ -1,8 +1,11 @@
 package com.example.ryandu.zbaselib;
 
 import android.app.Application;
+import android.graphics.Color;
+import android.view.Gravity;
 
 import com.duyangs.zbaselib.ZBase;
+import com.duyangs.zbaselib.toast.ToastZ;
 import com.duyangs.zbaselib.util.LogUtil;
 
 
@@ -33,5 +36,13 @@ public class App extends Application {
         logBuilder = new LogUtil.Builder().setLogOn(true);
 
         ZBase.init(this);
+
+        ToastZ.Config.getInstance()
+                .setGravity(Gravity.BOTTOM)
+                .setErrorColor(Color.parseColor("#909090")) // optional
+                .setInfoColor(Color.parseColor("#909090")) // optional
+                .setSuccessColor(Color.parseColor("#909090")) // optional
+                .setWarningColor(Color.parseColor("#909090")) // optional
+                .apply(); // require
     }
 }
