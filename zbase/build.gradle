@@ -4,7 +4,6 @@ apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.duyangs'
 android {
     compileSdkVersion Integer.parseInt(project.support_version)
-    buildToolsVersion project.build_tools_version
 
     defaultConfig {
         minSdkVersion Integer.parseInt(project.min_sdk_version)
@@ -21,6 +20,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    buildToolsVersion '27.0.3'
 }
 
 dependencies {
@@ -28,7 +28,7 @@ dependencies {
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    implementation 'com.android.support:appcompat-v7:27.+'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
     testImplementation 'junit:junit:4.12'
     implementation 'com.gyf.barlibrary:barlibrary:2.3.0'
     implementation 'com.nineoldandroids:library:2.4.0'

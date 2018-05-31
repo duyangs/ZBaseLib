@@ -30,15 +30,15 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
-        /**
-         * 初始化 LogUtil 并设置是否显示日志
+        /*
+          初始化 LogUtil 并设置是否显示日志
          */
         logBuilder = new LogUtil.Builder().setLogOn(true);
 
         ZBase.init(this);
 
         ToastZ.Config.getInstance()
-                .setGravity(Gravity.BOTTOM)
+                .setGravity(Gravity.TOP)
                 .setErrorColor(Color.parseColor("#909090")) // optional
                 .setInfoColor(Color.parseColor("#909090")) // optional
                 .setSuccessColor(Color.parseColor("#909090")) // optional
