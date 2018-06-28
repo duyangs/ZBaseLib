@@ -18,10 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.ToolbarActivity" />
-        <activity android:name=".activity.ToastUtilActivity" />
         <activity android:name=".activity.TextStyleUtilActivity" />
         <activity android:name=".activity.BaseFragmentShowActivity" />
-        <activity android:name=".activity.LoadingActivity" />
     </application>
 
 </manifest>

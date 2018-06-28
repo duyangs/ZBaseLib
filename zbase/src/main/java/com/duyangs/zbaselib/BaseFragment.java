@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.duyangs.zbaselib.util.LogUtil;
-import com.duyangs.zbaselib.toast.ToastZ;
 import com.gyf.barlibrary.ImmersionBar;
 
 
@@ -156,7 +155,7 @@ public abstract class BaseFragment extends Fragment {
      */
     protected void initImmersionBar() {
         mImmersionBar = ImmersionBar.with(this);
-        mImmersionBar.statusBarColor("00000000")
+        mImmersionBar.statusBarColor("#00000000")
                 .fitsSystemWindows(true)  //使用该属性必须指定状态栏的颜色，不然状态栏透明，很难看
                 .statusBarAlpha(0.0f)  //状态栏透明度，不写默认0.0f
                 .statusBarDarkFont(true)   //状态栏字体是深色，不写默认为亮色

@@ -1,11 +1,11 @@
 package com.example.ryandu.zbaselib.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import com.duyangs.zbaselib.BaseFragment;
-import com.duyangs.zbaselib.toast.ToastZ;
 import com.example.ryandu.zbaselib.R;
 
 
@@ -49,7 +49,7 @@ public class BaseFragmentShowFragment extends BaseFragment {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastZ.info(getArguments().getString("hello"));
+                Log.d(TAG,getArguments().getString("hello"));
             }
         });
     }

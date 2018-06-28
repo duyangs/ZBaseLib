@@ -2,12 +2,12 @@ package com.example.ryandu.zbaselib.activity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.duyangs.zbaselib.BaseActivity;
-import com.duyangs.zbaselib.toast.ToastZ;
 import com.duyangs.zbaselib.toolbar.BaseToolbar;
 import com.duyangs.zbaselib.util.StartActivityUtil;
 import com.example.ryandu.zbaselib.R;
@@ -46,7 +46,7 @@ public class ToolbarActivity extends BaseActivity implements BaseToolbar.OnClick
                 .setTitleOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        ToastZ.info("title");
+                        Log.d(TAG,"title");
                     }
                 }).build();
 
@@ -65,7 +65,7 @@ public class ToolbarActivity extends BaseActivity implements BaseToolbar.OnClick
 
     @Override
     public void navigationOnClick(View v) {
-        ToastZ.info("back");
+        Log.d(TAG,"back");
         finish();
     }
 
@@ -84,7 +84,7 @@ public class ToolbarActivity extends BaseActivity implements BaseToolbar.OnClick
                 msg = R.string.bar_setting;
                 break;
         }
-        ToastZ.info(msg);
+        Log.d(TAG,msg+"");
         return true;
     }
 }

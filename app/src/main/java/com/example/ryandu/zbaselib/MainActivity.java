@@ -9,9 +9,7 @@ import android.view.View;
 
 import com.duyangs.zbaselib.BaseActivity;
 import com.example.ryandu.zbaselib.activity.BaseFragmentShowActivity;
-import com.example.ryandu.zbaselib.activity.LoadingActivity;
 import com.example.ryandu.zbaselib.activity.TextStyleUtilActivity;
-import com.example.ryandu.zbaselib.activity.ToastUtilActivity;
 import com.example.ryandu.zbaselib.activity.ToolbarActivity;
 
 
@@ -21,10 +19,8 @@ public class MainActivity extends BaseActivity implements MainAdapter.OnItemClic
 
     private String[] type = {
             "Toolbar"
-            , "Toast"
             , "TextStyle"
-            , "BaseFragment"
-            , "Loading"};
+            , "BaseFragment"};
 
     private MainAdapter adapter;
 
@@ -61,17 +57,11 @@ public class MainActivity extends BaseActivity implements MainAdapter.OnItemClic
             case "Toolbar":
                 ToolbarActivity.actionStart(this);
                 break;
-            case "Toast":
-                ToastUtilActivity.actionStart(this);
-                break;
             case "TextStyle":
                 TextStyleUtilActivity.actionStart(this);
                 break;
             case "BaseFragment":
                 BaseFragmentShowActivity.actionStart(this);
-                break;
-            case "Loading":
-                LoadingActivity.actionStart(this);
                 break;
             }
     }
