@@ -2,8 +2,8 @@ package com.example.ryandu.zbaselib;
 
 import android.app.Application;
 
-import com.duyangs.zbaselib.ZBase;
-import com.duyangs.zbaselib.util.LogUtil;
+import com.duyangs.zbase.ZBase;
+import com.duyangs.zbase.util.LogUtil;
 
 
 /**

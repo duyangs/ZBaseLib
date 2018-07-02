@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/ZBaseLib.iml" filepath="$PROJECT_DIR$/ZBaseLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/zbase/zbase.iml" filepath="$PROJECT_DIR$/zbase/zbase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/znet/znet.iml" filepath="$PROJECT_DIR$/znet/znet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ztools/ztools.iml" filepath="$PROJECT_DIR$/ztools/ztools.iml" />
     </modules>
   </component>
 </project>

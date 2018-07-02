@@ -2,6 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
 group='com.github.duyangs'
+
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
 
@@ -14,12 +15,14 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
     buildToolsVersion rootProject.ext.android.buildToolsVersion
 }
 
@@ -30,6 +33,4 @@ dependencies {
     testImplementation rootProject.ext.dependencies.junit
     androidTestImplementation rootProject.ext.dependencies.runner
     androidTestImplementation rootProject.ext.dependencies.espressoCore
-
-    implementation 'com.gyf.barlibrary:barlibrary:2.3.0'
 }

@@ -12,10 +12,10 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.duyangs.zbaselib.BaseActivity;
-import com.duyangs.zbaselib.util.LogUtil;
-import com.duyangs.zbaselib.util.StartActivityUtil;
-import com.duyangs.zbaselib.util.TextSpannableUtil;
+import com.duyangs.zbase.BaseActivity;
+import com.duyangs.zbase.util.LogUtil;
+import com.duyangs.zbase.util.StartActivityUtil;
+import com.duyangs.zbase.util.TextSpannableUtil;
 import com.example.ryandu.zbaselib.R;
 
 

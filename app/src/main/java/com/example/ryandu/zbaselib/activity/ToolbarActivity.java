@@ -1,15 +1,17 @@
 package com.example.ryandu.zbaselib.activity;
 
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.duyangs.zbaselib.BaseActivity;
-import com.duyangs.zbaselib.toolbar.BaseToolbar;
-import com.duyangs.zbaselib.util.StartActivityUtil;
+import com.duyangs.zbase.BaseActivity;
+import com.duyangs.zbase.toolbar.BaseToolbar;
+import com.duyangs.zbase.util.StartActivityUtil;
 import com.example.ryandu.zbaselib.R;
 
 
@@ -38,6 +40,7 @@ public class ToolbarActivity extends BaseActivity implements BaseToolbar.OnClick
     public void initParams(Bundle params) {
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void initView() {
         toolBarBuilder.setOnClickListener(this)

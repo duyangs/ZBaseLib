@@ -6,10 +6,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.widget.FrameLayout;
 
-import com.duyangs.zbaselib.BaseActivity;
-import com.duyangs.zbaselib.util.StartActivityUtil;
+import com.duyangs.zbase.BaseActivity;
+import com.duyangs.zbase.util.StartActivityUtil;
 import com.example.ryandu.zbaselib.R;
 import com.example.ryandu.zbaselib.fragment.BaseFragmentShowFragment;
+
+import static com.example.ryandu.zbaselib.fragment.BaseFragmentShowFragment.*;
 
 
 /**
@@ -46,15 +48,11 @@ public class BaseFragmentShowActivity extends BaseActivity {
         Bundle bundle = new Bundle();
         bundle.putString("hello","hello");
 
-        BaseFragmentShowFragment fragment = null;
+        BaseFragmentShowFragment fragment;
         FragmentManager mFragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
-        if (null == fragment) {
-            fragment = BaseFragmentShowFragment.newInstance("s");
-            transaction.add(R.id.frameLayout, fragment);
-        } else {
-            transaction.show(fragment);
-        }
+        fragment = newInstance("s");
+        transaction.add(R.id.frameLayout, fragment);
         transaction.commit();
     }
 

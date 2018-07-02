@@ -1,11 +1,12 @@
 package com.example.ryandu.zbaselib.fragment;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.duyangs.zbaselib.BaseFragment;
+import com.duyangs.zbase.BaseFragment;
 import com.example.ryandu.zbaselib.R;
 
 
@@ -20,6 +21,7 @@ import com.example.ryandu.zbaselib.R;
  */
 public class BaseFragmentShowFragment extends BaseFragment {
 
+    @SuppressLint("StaticFieldLeak")
     private static BaseFragmentShowFragment mFragment;//用于newInstance
 
     private TextView textView;
@@ -28,9 +30,7 @@ public class BaseFragmentShowFragment extends BaseFragment {
         Bundle bundle = new Bundle();
         bundle.putString("hello",s);
         mFragment = new BaseFragmentShowFragment();
-        if (bundle != null){
-            mFragment.setArguments(bundle);
-        }
+        mFragment.setArguments(bundle);
         return mFragment;
     }
 
@@ -49,6 +49,7 @@ public class BaseFragmentShowFragment extends BaseFragment {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                assert getArguments() != null;
                 Log.d(TAG,getArguments().getString("hello"));
             }
         });

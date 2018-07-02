@@ -10,6 +10,8 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/zbase" />
+            <option value="$PROJECT_DIR$/znet" />
+            <option value="$PROJECT_DIR$/ztools" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

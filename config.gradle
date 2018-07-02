@@ -1,0 +1,32 @@
+ext {
+
+    android = [
+            compileSdkVersion   : 27,
+            buildToolsVersion   : "27.0.3",
+            minSdkVersion       : 16,
+            targetSdkVersion    : 27,
+            versionCode         : 1,
+            versionName         : "0.1.1"
+    ]
+
+    version = [
+            //support
+            androidSupportVersion       : "27.1.1",
+
+            //test
+            espressoCoreVersion         : "3.0.2",
+            junit                       : "4.12",
+            runner                      : "1.0.2"
+    ]
+
+    dependencies = [
+            //support
+            appcompatV7             : "com.android.support:appcompat-v7:${version.androidSupportVersion}",
+
+            //test
+            espressoCore            : "com.android.support.test.espresso:espresso-core:${version.espressoCoreVersion}",
+            junit                   : "junit:junit:${version.junit}",
+            runner                  : "com.android.support.test:runner:${version.runner}"
+
+    ]
+}

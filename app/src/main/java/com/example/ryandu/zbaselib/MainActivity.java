@@ -7,7 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.duyangs.zbaselib.BaseActivity;
+import com.duyangs.zbase.BaseActivity;
 import com.example.ryandu.zbaselib.activity.BaseFragmentShowActivity;
 import com.example.ryandu.zbaselib.activity.TextStyleUtilActivity;
 import com.example.ryandu.zbaselib.activity.ToolbarActivity;
