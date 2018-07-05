@@ -33,5 +33,7 @@ dependencies {
     implementation rootProject.ext.dependencies.appcompatV7
     testImplementation rootProject.ext.dependencies.junit
     androidTestImplementation rootProject.ext.dependencies.runner
-    androidTestImplementation rootProject.ext.dependencies.espressoCore
+    androidTestImplementation (rootProject.ext.dependencies.espressoCore, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
 }

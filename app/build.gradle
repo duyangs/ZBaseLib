@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion Integer.parseInt(project.support_version)
@@ -22,12 +24,16 @@ android {
 
 dependencies {
     androidTestImplementation fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestImplementation(rootProject.ext.dependencies.espressoCore, {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+
+    implementation rootProject.ext.dependencies.appcompatV7
+    implementation rootProject.ext.dependencies.recyclerviewV7
+    implementation rootProject.ext.dependencies.constraintLayout
+    androidTestImplementation rootProject.ext.dependencies.junit
+    implementation rootProject.ext.dependencies.kotlinStdlidJdk7
+
     implementation project(':zbase')
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support:recyclerview-v7:27.1.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
-    androidTestImplementation 'junit:junit:4.12'
+    implementation project(':ztools')
 }

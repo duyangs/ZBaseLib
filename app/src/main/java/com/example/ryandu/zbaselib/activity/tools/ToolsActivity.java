@@ -1,5 +1,6 @@
-package com.example.ryandu.zbaselib;
+package com.example.ryandu.zbaselib.activity.tools;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
@@ -8,23 +9,22 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.duyangs.zbase.BaseActivity;
-import com.example.ryandu.zbaselib.activity.BaseFragmentShowActivity;
-import com.example.ryandu.zbaselib.activity.TextStyleUtilActivity;
-import com.example.ryandu.zbaselib.activity.ToolbarActivity;
-import com.example.ryandu.zbaselib.activity.tools.ToolsActivity;
+import com.duyangs.zbase.util.StartActivityUtil;
+import com.example.ryandu.zbaselib.MainAdapter;
+import com.example.ryandu.zbaselib.R;
 
 
-public class MainActivity extends BaseActivity implements MainAdapter.OnItemClickListener {
+public class ToolsActivity extends BaseActivity implements MainAdapter.OnItemClickListener {
 
     private RecyclerView recyclerView;
 
-    private String[] type = {
-            "Toolbar"
-            , "TextStyle"
-            , "BaseFragment"
-            , "Tools"};
+    private String[] type = {"DateTools"};
 
     private MainAdapter adapter;
+
+    public static void actionStart(Context context){
+        StartActivityUtil.startActivity(context,ToolsActivity.class);
+    }
 
     @Override
     protected int bindLayout() {
@@ -56,17 +56,8 @@ public class MainActivity extends BaseActivity implements MainAdapter.OnItemClic
     @Override
     public void OnItemClick(View view, int position) {
         switch (type[position]){
-            case "Toolbar":
-                ToolbarActivity.actionStart(this);
-                break;
-            case "TextStyle":
-                TextStyleUtilActivity.actionStart(this);
-                break;
-            case "BaseFragment":
-                BaseFragmentShowActivity.actionStart(this);
-                break;
-            case "Tools":
-                ToolsActivity.actionStart(this);
+            case "DateTools":
+                DateToolsActivity.actionStart(this);
                 break;
             }
     }

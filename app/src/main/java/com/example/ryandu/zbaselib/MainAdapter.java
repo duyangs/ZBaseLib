@@ -67,7 +67,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         }
     }
 
-    interface OnItemClickListener{
+    public interface OnItemClickListener{
         void OnItemClick(View view, int position);
     }
 }

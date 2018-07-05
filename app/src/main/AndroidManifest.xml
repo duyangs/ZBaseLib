@@ -20,6 +20,9 @@
         <activity android:name=".activity.ToolbarActivity" />
         <activity android:name=".activity.TextStyleUtilActivity" />
         <activity android:name=".activity.BaseFragmentShowActivity" />
+
+        <activity android:name=".activity.tools.ToolsActivity"/>
+        <activity android:name=".activity.tools.DateToolsActivity"/>
     </application>
 
 </manifest>
