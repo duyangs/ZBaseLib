@@ -1,4 +1,4 @@
-package com.example.ryandu.zbaselib.activity;
+package com.example.ryandu.zbaselib.activity.tools;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -28,11 +28,11 @@ import com.example.ryandu.zbaselib.R;
  * @author duyangs
  * @date 2017/04/21 0021
  */
-public class TextStyleUtilActivity extends BaseActivity {
+public class TextStyleToolActivity extends BaseActivity {
     private LinearLayout linearLayout;
 
     public static void actionStart(Context context){
-        StartActivityUtil.startActivity(context,TextStyleUtilActivity.class);
+        StartActivityUtil.startActivity(context,TextStyleToolActivity.class);
     }
 
     @Override

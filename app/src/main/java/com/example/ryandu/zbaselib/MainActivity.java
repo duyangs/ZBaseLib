@@ -9,7 +9,6 @@ import android.view.View;
 
 import com.duyangs.zbase.BaseActivity;
 import com.example.ryandu.zbaselib.activity.BaseFragmentShowActivity;
-import com.example.ryandu.zbaselib.activity.TextStyleUtilActivity;
 import com.example.ryandu.zbaselib.activity.ToolbarActivity;
 import com.example.ryandu.zbaselib.activity.tools.ToolsActivity;
 
@@ -20,7 +19,6 @@ public class MainActivity extends BaseActivity implements MainAdapter.OnItemClic
 
     private String[] type = {
             "Toolbar"
-            , "TextStyle"
             , "BaseFragment"
             , "Tools"};
 
@@ -58,9 +56,6 @@ public class MainActivity extends BaseActivity implements MainAdapter.OnItemClic
         switch (type[position]){
             case "Toolbar":
                 ToolbarActivity.actionStart(this);
-                break;
-            case "TextStyle":
-                TextStyleUtilActivity.actionStart(this);
                 break;
             case "BaseFragment":
                 BaseFragmentShowActivity.actionStart(this);

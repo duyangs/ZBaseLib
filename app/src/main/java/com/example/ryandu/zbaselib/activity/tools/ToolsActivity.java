@@ -18,7 +18,7 @@ public class ToolsActivity extends BaseActivity implements MainAdapter.OnItemCli
 
     private RecyclerView recyclerView;
 
-    private String[] type = {"DateTools"};
+    private String[] type = {"DateTools","TextStyleTools"};
 
     private MainAdapter adapter;
 
@@ -58,6 +58,9 @@ public class ToolsActivity extends BaseActivity implements MainAdapter.OnItemCli
         switch (type[position]){
             case "DateTools":
                 DateToolsActivity.actionStart(this);
+                break;
+            case "TextStyleTools":
+                TextStyleToolActivity.actionStart(this);
                 break;
             }
     }

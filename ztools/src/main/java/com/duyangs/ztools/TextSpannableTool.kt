@@ -62,11 +62,10 @@ class TextSpannableTool {
         val start = stringBuilder.length
         stringBuilder.append(text)
         val end = stringBuilder.length
-        if (parcelableSpans != null)
-            for (parcelableSpan in parcelableSpans) {
-                position.add(arrayOf(start, end))
-                style.add(parcelableSpan)
-            }
+        parcelableSpans.forEach { parcelableSpan ->
+            position.add(arrayOf(start, end))
+            style.add(parcelableSpan)
+        }
         return this
     }
 
@@ -191,6 +190,7 @@ class TextSpannableTool {
                 when (parameter!!.superscriptsAndSubscripts) {
                     TextSpannableTool.TextStyle.SuperscriptsAndSubscripts.SUPERSCRIPT -> parcelableSpanList.add(SuperscriptSpan())
                     TextSpannableTool.TextStyle.SuperscriptsAndSubscripts.SUBSCRIPT -> parcelableSpanList.add(SubscriptSpan())
+                    else -> { }
                 }
             }
 
