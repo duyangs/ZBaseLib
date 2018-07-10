@@ -1,11 +1,11 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 group='com.github.duyangs'
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-
-
 
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
@@ -36,4 +36,17 @@ dependencies {
     androidTestImplementation (rootProject.ext.dependencies.espressoCore, {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+
+    implementation rootProject.ext.dependencies.kotlinStdlidJdk7
+    implementation rootProject.ext.dependencies.retrofit
+    implementation rootProject.ext.dependencies.converterGson
+    implementation rootProject.ext.dependencies.adapterRxjava
+    implementation rootProject.ext.dependencies.rxJava
+    implementation rootProject.ext.dependencies.rxAndroid
+    implementation rootProject.ext.dependencies.loggingInterceptor
+    implementation rootProject.ext.dependencies.parseAndroid
+    implementation rootProject.ext.dependencies.urlManager
+
+
+
 }
