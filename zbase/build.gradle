@@ -1,7 +1,6 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.novoda.bintray-release'
 
-group='com.github.duyangs'
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
@@ -21,6 +20,10 @@ android {
         }
     }
     buildToolsVersion rootProject.ext.buildToolsVersion
+
+    lintOptions{
+        abortOnError false
+    }
 }
 
 dependencies {
@@ -34,4 +37,17 @@ dependencies {
     })
 
     implementation 'com.gyf.barlibrary:barlibrary:2.3.0'
+}
+
+task javadoc(type: Javadoc) {
+    options.encoding = "utf-8"
+}
+
+publish {
+    userOrg = 'duyangs'
+    groupId = 'com.ximimax.zbaselib'
+    artifactId = 'zbase'
+    version = '0.0.1'
+    description = 'Lightweight Android project dependencies'
+    website = "https://github.com/duyangs/ZBaseLib"
 }
