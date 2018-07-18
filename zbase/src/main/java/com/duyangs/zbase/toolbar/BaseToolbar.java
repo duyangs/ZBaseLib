@@ -14,8 +14,8 @@ import com.duyangs.zbase.R;
 import java.util.Objects;
 
 /**
- * <p>Project:BaseLibDemo</p>
- * <p>Package:com.duyangs.baselib</p>
+ * <p>Project:ZBase</p>
+ * <p>Package:com.duyangs.zbase</p>
  * <p>Description:可直接调用Toolbar的封装类，不支持继承</p>
  * <p>Company:</p>
  *

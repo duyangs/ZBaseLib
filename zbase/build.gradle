@@ -1,5 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -37,6 +39,7 @@ dependencies {
     })
 
     implementation 'com.gyf.barlibrary:barlibrary:2.3.0'
+    implementation rootProject.ext.dependencies.kotlinStdlidJdk7
 }
 
 task javadoc(type: Javadoc) {
