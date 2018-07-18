@@ -6,13 +6,13 @@ import android.app.Application;
 /**
  * <p>Project:ZBase</p>
  * <p>Package:com.duyangs.zbase</p>
- * <p>Description:BaseModel Basic data model，Do not Constructor</p>
+ * <p>Description:BaseModelInterface Basic data model，Do not Constructor</p>
  * <p>Company:</p>
  *
  * @author duyangs
  * @date 2018/07/18
  */
-interface BaseModel {
+interface BaseModelInterface {
     /**
      * 初始化
      *

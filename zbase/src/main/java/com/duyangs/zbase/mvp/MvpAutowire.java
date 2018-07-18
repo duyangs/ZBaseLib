@@ -5,7 +5,7 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.duyangs.zbase.mvp.annotation.Autowire;
-import com.duyangs.zbase.mvp.model.face.BaseModel;
+import com.duyangs.zbase.mvp.model.face.BaseModelInterface;
 
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.SoftReference;
@@ -211,8 +211,8 @@ public class MvpAutowire {
         try {
             Object model = value.newInstance();
             //model初始化过程
-            if (model instanceof BaseModel) {
-                ((BaseModel) model).init(MvpAutowire.application.get());
+            if (model instanceof BaseModelInterface) {
+                ((BaseModelInterface) model).init(MvpAutowire.application.get());
             }
             Log.e("---------", "新创建");
             return model;
