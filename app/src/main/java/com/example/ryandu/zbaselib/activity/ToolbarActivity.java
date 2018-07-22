@@ -76,6 +76,7 @@ public class ToolbarActivity extends BaseActivity implements BaseToolbar.OnClick
     public boolean onMenuItemClick(MenuItem item) {
         int msg = 0;
 
+
         switch (item.getItemId()){
             case R.id.action_edit:
                 msg = R.string.bar_edit;
